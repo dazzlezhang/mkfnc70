@@ -1,0 +1,81 @@
+============================================================================
+mkfnc70 - README
+
+Version 1.0, 23-Dec-2011
+
+(C) Copyright 2011 Yu Zhang <yu_zhang@ieee.org>
+============================================================================
+
+
+INTRODUCTION
+------------
+
+This utility makes Type 1 subfronts and auxiliary files from TrueType
+fonts for the CJK package with UTF-8 encoding.  This utility is
+designed for running on Linux/UNIX/Mac OS.  To run this utility, the
+following applications are needed:
+
+  - Bash
+  - awk
+  - perl
+  - fontforge
+  - a TeX distribution
+
+
+DOWNLOAD AND INSTALL
+--------------------
+
+The utility is provided in a single ZIP archive through the
+`Downloads' section of the BUPTThesis project at
+
+http://code.google.com/p/buptthesis/downloads/list
+
+The file name of the archive is `mkfnc70-VERSION.zip', where `VERSION'
+stands for the version of the utility, e.g., `1.0'.  To install the
+utility, simply extract the ZIP archive wherever you want.  One
+possible location for installation is $HOME/opt/mkfnc70/.  We denote
+this installation path by $PREFIX/.  It means that $PREFIX/README will
+lead you to this README file.
+
+
+USAGE
+-----
+
+To use mkfnc70, one needs to prepare an input file which describes
+
+  - the foundry of the font, 
+  - the family name to be used with CJK package, and 
+  - the path to the TrueType font from which the Type 1 subfonts
+    will be made.
+
+To get started, you should make a temporary working directory, say
+$WORKDIR/.  In $WORKDIR/, make a copy of the example input file:
+
+cp $PREFIX/fontlist.example $WORKDIR/fontlist
+
+Use your favorite text editor to modify $WORKDIR/fontlist.  Note that
+the path to the TrueType font should be either an absolute path or a
+path relative to $WORKDIR/.  Then change the directory to $WORKDIR/
+and run mkfnc70:
+
+$PREFIX/mkfnc70 fontlist
+
+This command will make Type 1 subfonts and auxiliary files from each
+TrueType font listed in the `fontlist'.  All the generated files will
+be put in $WORKDIR/texmf/ in TeX directory structure (TDS).  Besides,
+an installation script will also be prepared.  If you want to install
+the generated subfonts and auxiliary files to your $TEXMFHOME/, you
+just need to run
+
+./install
+
+from $WORKDIR/.  Otherwise, you can manually move files under
+$WORKDIR/texmf/.  If you install those files by yourself, don't forget
+to rebuild ls-R filename databases used by TeX and to update the
+default font map files.
+
+
+REPORT BUGS
+-----------
+
+Please send bug reports to <yu_zhang@ieee.org>.

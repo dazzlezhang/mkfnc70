@@ -1,0 +1,12 @@
+# This is a example input file for mkfnc70.
+#
+# Eche line contains the follow three fields:
+#
+# <FOUNDRY>	<FAMILY>	<PATH>
+#
+#   FOUNDRY	Name of the font foundry
+#   FAMILY	Name of the font family
+#   PATH	Path to the TrueType font
+
+microsoft	song	truetype/simsun.ttf
+microsoft	hei	truetype/simhei.ttf
