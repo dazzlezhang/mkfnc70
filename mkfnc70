@@ -3,11 +3,11 @@
 # mkfnc70 -- make Type 1 subfonts and auxiliary files for CJK
 # package (UTF-8)
 #
-# (C) Copyright 2011 Yu Zhang <yu_zhang@ieee.org>
+# (C) Copyright 2011-2012 Yu Zhang <yu_zhang@ieee.org>
 #
 
-VERSION="1.0"
-FILEDATE="2011/12/23"
+VERSION="1.1"
+FILEDATE="2012/08/31"
 
 E_BADARGS=65
 E_BADFILE=127
@@ -111,7 +111,7 @@ function build() {
     touch $SCRIPT
     chmod 755 $SCRIPT
     awk -f $MKFNC70_AWK $FONTLIST > $SCRIPT
-    ./SCRIPT
+    ./$SCRIPT
 }
 
 function clean() {
